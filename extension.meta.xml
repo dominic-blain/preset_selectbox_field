@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension id="preset_selectbox_field" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
+<extension id="preset_selectbox_field" status="experimental" xmlns="http://getsymphony.com/schemas/extension/1.0">
 	<name>Field: Preset Selectbox</name>
 	<description>
 		Simple field with multiple UX with presets and values fetched from a JSON file
@@ -17,7 +17,7 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.0.0" date="2018-11-13" min="4.0.0" max="4.x.x">
+		<release version="0.1.0" date="2018-11-13" min="4.0.0" max="4.x.x">
 			- Initial release
 		</release>
 	</releases>

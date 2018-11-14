@@ -1,0 +1,66 @@
+{
+	"preset-a": {
+		"values": [
+			{
+				"label": "Label A",
+				"value": "value A",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"currentColor\"/></svg>"
+			},
+			{
+				"label": "Label B",
+				"value": "value B",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"currentColor\"/></svg>"
+			},
+			{
+				"label": "Label C",
+				"value": "value C",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"currentColor\"/></svg>"
+			},
+			{
+				"label": "Label D",
+				"value": "value D",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"currentColor\"/></svg>"
+			}
+		]
+	},
+	"preset-b": {
+		"values": [
+			{
+				"label": "Label A",
+				"value": "value A"
+			},
+			{
+				"label": "Label B",
+				"value": "value B"
+			},
+			{
+				"label": "Label C",
+				"value": "value C"
+			},
+			{
+				"label": "Label D",
+				"value": "value D"
+			}
+		]
+	},
+	"preset-c": {
+		"values": [
+			{
+				"value": "value A",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"#FF0000\"/></svg>"
+			},
+			{
+				"value": "value B",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"#00FF00\"/></svg>"
+			},
+			{
+				"value": "value C",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"#0000FF\"/></svg>"
+			},
+			{
+				"value": "value D",
+				"svg": "<svg viewBox=\"0 0 220 220\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"110\" cy=\"110\" r=\"110\" fill=\"#FF00FF\"/></svg>"
+			}
+		]
+	}
+}

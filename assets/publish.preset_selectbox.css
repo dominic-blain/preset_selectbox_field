@@ -1,0 +1,58 @@
+.field.field-preset_selectbox {
+	color: blue;
+}
+
+.field.field-preset_selectbox .preset-selectbox-ctn {
+	display: flex;
+	align-items: center;
+	margin-top: 12px;
+}
+
+.field.field-preset_selectbox .preset-selectbox-choice {
+	display: inline-block;
+	text-align: center;
+}
+
+.field.field-preset_selectbox .preset-selectbox-choice:first-of-type label {
+	border-top-left-radius: 5px; 
+	border-bottom-left-radius: 5px; 
+}
+
+.field.field-preset_selectbox .preset-selectbox-choice:last-of-type label {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.field.field-preset_selectbox .preset-selectbox-choice svg {
+	width: 20px;
+	display: block;
+	margin: 0 auto;
+}
+
+.field.field-preset_selectbox .preset-selectbox-ctn label {
+	background-color: #E1EBF2;
+	color: #AFC8D9;
+	transition-property: color, background-color;
+	transition-duration: 100ms;
+	padding: 10px 5px;
+	font-size: 1.2rem;
+	line-height: 21px;
+	min-width: 30px;
+	min-height: 16px;
+	cursor: pointer;
+	margin-bottom: 0 !important;
+}
+
+.field.field-preset_selectbox .preset-selectbox-ctn label span {
+	user-select: none;
+}
+
+.field.field-preset_selectbox .preset-selectbox-ctn .preset-selectbox-choice input {
+	display: none;
+}
+
+/* is checked */
+.field.field-preset_selectbox .preset-selectbox-choice input:checked + label {
+	background-color: #2F77EB;
+	color: #ffffff;
+}

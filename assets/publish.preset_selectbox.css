@@ -1,11 +1,17 @@
 .field.field-preset_selectbox {
 	color: blue;
+	position: relative;
+}
+
+.field.field-preset_selectbox .preset-selectbox-toggle {
+	/*  */
 }
 
 .field.field-preset_selectbox .preset-selectbox-ctn {
 	display: flex;
 	align-items: center;
 	margin-top: 12px;
+	flex-wrap: wrap;
 }
 
 .field.field-preset_selectbox .preset-selectbox-choice {
@@ -31,16 +37,26 @@
 
 .field.field-preset_selectbox .preset-selectbox-ctn label {
 	background-color: #E1EBF2;
-	color: #AFC8D9;
+	color: #657685;
 	transition-property: color, background-color;
 	transition-duration: 100ms;
 	padding: 10px 5px;
-	font-size: 1.2rem;
-	line-height: 21px;
-	min-width: 30px;
+	min-width: 20px;
 	min-height: 16px;
 	cursor: pointer;
 	margin-bottom: 0 !important;
+	text-transform: none;
+}
+
+.field.field-preset_selectbox .preset-selectbox-ctn .text-label {
+	display: block;
+	margin-top: 7px;
+	line-height: 1em;
+}
+
+.field.field-preset_selectbox .preset-selectbox-ctn .icon {
+	min-width: 30px;
+	display: block;
 }
 
 .field.field-preset_selectbox .preset-selectbox-ctn label span {
@@ -49,6 +65,12 @@
 
 .field.field-preset_selectbox .preset-selectbox-ctn .preset-selectbox-choice input {
 	display: none;
+}
+
+/* is hidden */
+.field.field-preset_selectbox .is-hidden {
+	height: 0;
+	overflow: hidden;
 }
 
 /* is checked */

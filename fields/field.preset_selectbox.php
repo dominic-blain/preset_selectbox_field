@@ -246,47 +246,68 @@
                 $fieldname .= '[]';
             }
 
-            $label = Widget::Label($this->get('label'));
+            $label = Widget::Label();
+            $label->setAttribute('for', 'i know this sounds crazy, but i just need a dummy value here');
+
+            if ($this->get('allow_toggle') === 'yes' && $this->get('required') === 'no') {
+                $toggle = new XMLElement('input');
+                $toggle->setAttribute('type', 'checkbox');
+
+                if (!empty($data['value'])) {
+                    $toggle->setAttribute('checked', 'checked');
+                }
+
+                $toggle->addClass('preset-selectbox-toggle');
+                $toggle->addClass('js-preset-selectbox-toggle');
+                $label->appendChild($toggle);
+            }
+
+            $label->setValue($this->get('label'));
 
             if($this->get('required') != 'yes') {
                 $label->appendChild(new XMLElement('i', __('Optional')));
             }
 
             $select = new XMLElement('div');
-            $select->addClass('preset-selectbox-ctn');
+            $select->addClass('preset-selectbox-ctn js-preset-selectbox-content');
+            $select->setAttribute('data-multiple', $this->get('allow_multiple_selection') == 'yes');
             $savedValues = array_map('trim', explode(',', $data['value']));
 
-            foreach ($presets->values as $key => $value) {
-                $id = $this->get('id') . General::createHandle($value->value);
-                $ctn = new XMLElement('div');
-                $ctn->addClass('preset-selectbox-choice');
-                $lbl = new XMLElement('label');
-                $lbl->setAttribute('for', $id);
-
-                if (!empty($value->svg)) {
-                    $svg = new XMLElement('span', $value->svg);
-                    $svg->addClass('icon');
-                    $lbl->appendChild($svg);
-                    if ($value->label) {
-                        $lbl->appendChild(new XMLElement('span', $value->label));
+            if ($presets) {
+                foreach ($presets->values as $key => $value) {
+                    $id = $this->get('id') . General::createHandle($value->value);
+                    $ctn = new XMLElement('div');
+                    $ctn->addClass('preset-selectbox-choice');
+                    $lbl = new XMLElement('label');
+                    $lbl->setAttribute('for', $id);
+    
+                    if (!empty($value->svg)) {
+                        $svg = new XMLElement('span', $value->svg);
+                        $svg->addClass('icon');
+                        $lbl->appendChild($svg);
+                        if ($value->label) {
+                            $txtLbl = new XMLElement('span', $value->label);
+                            $txtLbl->addClass('text-label');
+                            $lbl->appendChild($txtLbl);
+                        }
+                    } else {
+                        $lbl->setValue(!!$value->label ? $value->label : $value->value);
                     }
-                } else {
-                    $lbl->setValue(!!$value->label ? $value->label : $value->value);
+    
+                    $input = new XMLElement('input');
+                    $input->setAttribute('id', $id);
+                    $input->setAttribute('name', $fieldname);
+                    $input->setAttribute('type', 'checkbox');
+                    $input->setAttribute('value', $value->value);
+    
+                    if (in_array($value->value, $savedValues)) {
+                        $input->setAttribute('checked', 'checked');
+                    }
+    
+                    $ctn->appendChild($input);
+                    $ctn->appendChild($lbl);
+                    $select->appendChild($ctn);
                 }
-
-                $input = new XMLElement('input');
-                $input->setAttribute('id', $id);
-                $input->setAttribute('name', $fieldname);
-                $input->setAttribute('type', $this->get('allow_multiple_selection') == 'yes' ? 'checkbox' : 'radio');
-                $input->setAttribute('value', $value->value);
-
-                if (in_array($value->value, $savedValues)) {
-                    $input->setAttribute('checked', 'checked');
-                }
-
-                $ctn->appendChild($input);
-                $ctn->appendChild($lbl);
-                $select->appendChild($ctn);
             }
 
             $label->appendChild($select);

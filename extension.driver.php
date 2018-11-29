@@ -48,6 +48,7 @@
 			// publish page
 			if($c['driver'] == 'publish'){
 				Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/preset_selectbox_field/assets/publish.preset_selectbox.css');
+				Administration::instance()->Page->addScriptToHead(URL . '/extensions/preset_selectbox_field/assets/publish.preset_selectbox.js');
 			}
 		}
 

@@ -52,8 +52,7 @@
 
 		if (!t.prop('checked')) {
 			inputs.prop('checked', false);
-		}
-		else {
+		} else {
 			inputs.each(function () {
 				var input = $(this);
 				var id = input.attr('id');

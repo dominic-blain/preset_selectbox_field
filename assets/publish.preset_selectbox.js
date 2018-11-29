@@ -13,6 +13,8 @@
 		inputs: 'input[type="checkbox"]'
 	};
 
+	var inputsRestoreState = {};
+
 	var STATE_CLASS = 'is-hidden';
 
 	var computeInitialState = function () {
@@ -25,8 +27,12 @@
 
 			inputs.each(function () {
 				var t = $(this);
-				if (!!t.prop('checked')) {
+				var id = t.attr('id');
+				var isChecked = !!t.prop('checked');
+
+				if (isChecked) {
 					fx = 'removeClass';
+					inputsRestoreState[id] = isChecked;
 				}
 			});
 
@@ -46,6 +52,14 @@
 
 		if (!t.prop('checked')) {
 			inputs.prop('checked', false);
+		}
+		else {
+			inputs.each(function () {
+				var input = $(this);
+				var id = input.attr('id');
+				var isChecked = inputsRestoreState[id];
+				input.prop('checked', isChecked);
+			});
 		}
 	};
 

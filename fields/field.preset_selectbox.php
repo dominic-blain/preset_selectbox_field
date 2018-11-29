@@ -247,7 +247,6 @@
             }
 
             $label = Widget::Label();
-            $label->setAttribute('for', 'i know this sounds crazy, but i just need a dummy value here');
 
             if ($this->get('allow_toggle') === 'yes' && $this->get('required') === 'no') {
                 $toggle = new XMLElement('input');
